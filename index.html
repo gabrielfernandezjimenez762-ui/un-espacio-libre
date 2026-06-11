@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Esto es lo que Google muestra en los resultados de búsqueda -->
+  <title>Espacio Libre — Un lugar para desahogarte</title>
+  <meta name="description" content="Un espacio seguro y anónimo donde puedes escribir cómo te sientes sin ser juzgado.">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <!-- SECCIÓN 1: El encabezado con el mensaje principal -->
+  <header>
+    <h1>Un lugar donde puedes ser honesto</h1>
+    <p>No tienes que estar bien. Escribe lo que sientes, sin filtros.</p>
+  </header>
+
+  <!-- SECCIÓN 2: El formulario para escribir -->
+  <main>
+    <section class="mensajes">
+  <h2>Lo que otros sienten</h2>
+  <div id="lista-mensajes"></div>
+</section>
+    <section class="formulario">
+
+      <label>¿Cómo te sientes hoy?</label>
+
+      <!-- Botones de estado de ánimo -->
+      <div class="estados">
+        <button class="estado">Agotado</button>
+        <button class="estado">Triste</button>
+        <button class="estado">Ansioso</button>
+        <button class="estado">Solo</button>
+        <button class="estado">Enojado</button>
+      </div>
+
+      <!-- Caja de texto principal -->
+      <textarea 
+        id="mensaje" 
+        placeholder="Cuéntanos lo que llevas dentro...">
+      </textarea>
+
+      <!-- Opción de anonimato -->
+      <label class="anonimo">
+        <input type="checkbox" id="anonimo">
+        Publicar de forma anónima
+      </label>
+
+      <!-- Botón de envío -->
+      <button id="btn-enviar">Enviar mi mensaje</button>
+
+    </section>
+
+    <!-- SECCIÓN 3: Línea de crisis (siempre visible) -->
+    <aside class="ayuda">
+      <h3>Si necesitas ayuda urgente</h3>
+    
+    </aside>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
