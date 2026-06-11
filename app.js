@@ -44,7 +44,7 @@ btnEnviar.addEventListener('click', async function() {
   }
 
   // Guardamos el mensaje en Supabase
-  const respuesta = await fetch
+  
   const respuestaDB = await fetch(`${SUPABASE_URL}/rest/v1/mensajes`, {
     method: 'POST',
     headers: {
@@ -140,3 +140,4 @@ function mostrarConfirmacion() {
   document.querySelector('.formulario').appendChild(msg);
   setTimeout(function() { msg.remove(); }, 4000);
 }
+// actualización
