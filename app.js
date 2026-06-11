@@ -35,6 +35,16 @@ btnEnviar.addEventListener('click', async function() {
   }
 
   // Guardamos el mensaje en Supabase
+  // Verificamos el contenido antes de guardar
+ const apropiado = esMensajeApropiado(texto);
+
+  if (!apropiado) {
+    alert('Tu mensaje contiene contenido inapropiado y no puede ser publicado. Por favor revísalo.');
+    return;
+  }
+
+  // Guardamos el mensaje en Supabase
+  const respuesta = await fetch
   const respuesta = await fetch(`${SUPABASE_URL}/rest/v1/mensajes`, {
     method: 'POST',
     headers: {
@@ -91,6 +101,32 @@ async function cargarMensajes() {
 }
 
 cargarMensajes();
+const palabrasProhibidas = [
+  'idiota', 'imbécil', 'estúpido', 'maldito', 'mierda', 'culo',
+  'puta', 'puto', 'marica', 'hijueputa', 'gonorrea', 'malparido',
+  'verga', 'coño', 'pendejo', 'cabrón', 'zorra',
+  'suicidio', 'matarme', 'mátate', 'córtate',
+  'compra ahora', 'gana dinero', 'haz clic', 'oferta',
+  'sexo', 'porno', 'desnudo', 'desnuda', 'follar', 'coger',
+  'masturbación', 'masturbarse', 'orgasmo', 'pene', 'vagina',
+  'tetas', 'anal', 'oral', 'prostituta', 'escort',
+  'onlyfans', 'xxx', 'erótico', 'erótica', 'lujuria',
+];
+
+function esMensajeApropiado(texto) {
+  const textoMinusculas = texto.toLowerCase();
+  for (const palabra of palabrasProhibidas) {
+    if (textoMinusculas.includes(palabra)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+  const data = await respuesta.json();
+  const resultado = data.content[0].text.toLowerCase().trim();
+  return resultado === 'apropiado';
+
 
 
 // ===== MENSAJE DE CONFIRMACIÓN =====

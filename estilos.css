@@ -196,4 +196,51 @@ textarea:focus {
   border-radius: 20px;
   padding: 3px 12px;
   font-size: 12px;
+}/* ===== DISEÑO MÓVIL ===== */
+@media (max-width: 600px) {
+
+  body {
+    padding: 16px 12px;
+  }
+
+  header {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .formulario {
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+
+  .estados {
+    gap: 6px;
+  }
+
+  .estado {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  textarea {
+    min-height: 100px;
+    font-size: 16px; /* evita que el celular haga zoom al escribir */
+  }
+
+  #btn-enviar {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .mensajes h2 {
+    font-size: 15px;
+  }
+
+  .tarjeta-mensaje {
+    padding: 14px;
+  }
 }
